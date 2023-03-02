@@ -19,22 +19,16 @@ function onPlay(data) {
   const playTime = data;
 
   localStorage.setItem('videoplayer-current-time', JSON.stringify(playTime));
-
-  // console.log(playTime);
 }
 
 function playOnSavedTime() {
   const getTime = localStorage.getItem('videoplayer-current-time');
   const parsedGetTime = JSON.parse(getTime);
-  // console.log(getTime);
-  // console.log(parsedGetTime);
-
-  const { seconds } = parsedGetTime;
-  // console.log(seconds);
 
   player
     .setCurrentTime(seconds)
     .then(function (seconds) {
+      const { seconds } = parsedGetTime;
       // seconds = the actual time that the player seeked to
     })
     .catch(function (error) {
