@@ -23,8 +23,6 @@ function onPlay(data) {
   const playTime = data;
 
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(playTime));
-
-  console.log(playTime);
 }
 
 function playOnSavedTime() {
